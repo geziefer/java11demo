@@ -1,0 +1,16 @@
+JDK 11 Demo Project - ARU 11/18
+-------------------------------
+
+Config:
+export JAVA_HOME=/C/Projects/Java/jdk-11.0.1
+export PATH=$JAVA_HOME/bin:$PATH
+
+Build:
+mvn clean install
+
+Run:
+java -cp target/java11demo-0.0.1-SNAPSHOT.jar de.syrocon.java11.Demo
+
+Run without build:
+java src/main/java/de/syrocon/java11/Demo.java
+
