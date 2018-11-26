@@ -15,4 +15,4 @@ Run without build:
 java src/main/java/de/syrocon/java11/Demo.java
 
 Run Flight recorder test:
-java -XX:StartFlightRecording=disk=true,dumponexit=true,filename=target/recording.jfr,maxsize=1024m,maxage=1d,settings=profile,path-to-gc-roots=true src/main/java/de/syrocon/java11/Flight.java
+java -XX:StartFlightRecording=disk=true,dumponexit=true,filename=target/recording.jfr,maxsize=1024m,maxage=1d,settings=profile,path-to-gc-roots=true -Dcom.sun.management.jmxremote src/main/java/de/syrocon/java11/Flight.java
