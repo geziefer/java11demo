@@ -26,6 +26,7 @@ public class Demo {
 		HttpRequest request = HttpRequest.newBuilder(new URI("http://www.brainjar.com/java/host/test.html")).GET()
 				.build();
 		CompletableFuture<HttpResponse<String>> fr = client.sendAsync(request, BodyHandlers.ofString());
+		System.out.println("Request sent");
 		while (!fr.isDone()) {
 			System.out.println("Waiting...");
 			Thread.sleep(100);
@@ -39,7 +40,7 @@ public class Demo {
 		Arrays.asList(Demo.class.getNestMembers()).stream().forEach(System.out::println);
 		System.out.println(Demo.Nest.class.getNestHost());
 
-		System.out.println("\n\n*** Core API Changes: Sring and Predicate");
+		System.out.println("\n\n*** Core API Changes: String and Predicate");
 		List.of("A", " \t", "Z\n").stream().filter(not(String::isBlank)).forEach(System.out::print);
 		"Hi!\n".repeat(3).lines().forEach(System.out::println);
 		System.out.println("\t\u2000Yeah! ".strip());
