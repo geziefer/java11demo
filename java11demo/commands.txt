@@ -14,3 +14,5 @@ java -cp target/java11demo-0.0.1-SNAPSHOT.jar de.syrocon.java11.Demo
 Run without build:
 java src/main/java/de/syrocon/java11/Demo.java
 
+Run Flight recorder test:
+java -XX:StartFlightRecording=disk=true,dumponexit=true,filename=target/recording.jfr,maxsize=1024m,maxage=1d,settings=profile,path-to-gc-roots=true src/main/java/de/syrocon/java11/Flight.java
