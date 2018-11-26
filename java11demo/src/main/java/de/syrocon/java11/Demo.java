@@ -1,5 +1,7 @@
 package de.syrocon.java11;
 
+import static java.util.function.Predicate.not;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -36,6 +38,11 @@ public class Demo {
 		System.out.println("\n*** JEP 181: Nest-Based Access Control");
 		Arrays.asList(Demo.class.getNestMembers()).stream().forEach(System.out::println);
 		System.out.println(Demo.Nest.class.getNestHost());
+
+		System.out.println("\n\n*** Core API Changes: Sring and Predicate");
+		List.of("A", " \t", "Z\n").stream().filter(not(String::isBlank)).forEach(System.out::print);
+		"Hi!\n".repeat(3).lines().forEach(System.out::println);
+		System.out.println("\t\u2000Yeah! ".strip());
 	}
 
 	class Nest {
